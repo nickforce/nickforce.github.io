@@ -31,8 +31,13 @@
 			top: 10%;
 			width: 75%;
 		}
+		
+		#shopifyDiv {
+
+			background-color: #00b57a;
+		}
 	</style>
-	<body class="is-preload">
+	<body class="is-preload" onclick="goToCurrentAdd();">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -46,8 +51,8 @@
 								<li><a href="#mce-EMAIL" class="arrow scrolly"><span class="label">Next</span></a></li>
 							</ul>
 						</header>
-						<div class="content" onclick="addSnapChat();">
-							<span class="image fill" data-position="center"><img src="images/snapcode.png" alt="" /></span>
+						<div class="content shopifyDiv" onclick="goToCurrentAdd();">
+							<span class="image fill" data-position="center"><img src="images/ccLogoPanel.png" alt="" /></span>
 						</div>
 					</section>
 
@@ -510,8 +515,9 @@ print 'Sorted in ' + i + ' iterations.';</code></pre>
 
 		<!-- Scripts -->
 		<script>
-				function addSnapChat() {
-					window.location.href = "https://www.snapchat.com/add/ncjohnson818";
+				function goToCurrentAdd() {
+					//window.location.href = "https://www.snapchat.com/add/ncjohnson818";
+					window.location.href = "https://cirrus-code.myshopify.com/";
 				} 
 			</script>
 			<script src="assets/js/jquery.min.js"></script>
