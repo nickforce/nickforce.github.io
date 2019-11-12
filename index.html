@@ -37,7 +37,7 @@
 			background-color: #00b57a;
 		}
 	</style>
-	<body class="is-preload"  onclick="goToCurrentAdd();">
+	<body class="is-preload"> <!--   onclick="goToCurrentAdd();" -->
 
 		<div id="wrapper">
 			<section class="intro">
@@ -59,8 +59,8 @@
 					</header>
 					<div class="content">
 							<ul class="actions">
-									<li><a href="#" onclick="goToCurrentAdd();" class="button primary large">SHOP</a></li>
-									<li><a href="#" onclick="goToCurrentAdd();" class="button large">🛒🛒🛒🛒</a></li>
+									<li><a href="#" onclick="goToCurrentAdd();" target="_blank" class="button primary large">SHOP</a></li>
+									<li><a href="#" onclick="goToCurrentAdd();" target="_blank" class="button large">🛒🛒🛒🛒</a></li>
 								</ul>
 						<p><strong>OFFERINGS. </strong> Stores. Websites. Promos. Video. Apps. Social Media. Education. Mentor.</p>
 						<div class="content">
@@ -68,6 +68,24 @@
 						</div>
 					</div>
 				</section>
+
+
+				<section >
+						<header>
+							<h2>🔌 API  🔌</h2>
+						</header>
+						<div class="content">
+								<ul class="actions">
+										<li><a href="#" onclick="goToAPILadning();" target="_blank" class="button primary large">VIEW API POWERS</a></li>
+										<li><a href="#" onclick="goToAPILadning();" target="_blank" class="button large">🔌🔌🔌🔌</a></li>
+									</ul>
+							<p><strong>API POWERED APPS. </strong> Vast integrations to choose from or request a new one to be built on demand.</p>
+							<p>#1) example customer request: "I need to be able to create a "Story" and publish it on a schdule everyday to all the social platforms (IG/SC/FB/TWTR) at once."</p>
+							<p>#1) response to customer: "you will to utilize our "Social" api for this project."</p>
+							<p>#2) example customer request: "I want to automate cashapp requests and schedule them."</p>
+							<p>#2) response to customer: "you will to utilize our "Finance" api for this project."</p>
+						</div>
+					</section>
 
 				<div class="copyright">&copy; Cirrus Code, LLC. All rights reserved.</div>
 				<div id="root"></div>
@@ -77,6 +95,11 @@
 				function goToCurrentAdd() {
 					//window.location.href = "https://www.snapchat.com/add/ncjohnson818";
 					window.location.href = "https://cirrus-code.myshopify.com/collections/frontpage/products/1-site-app-50-off";
+				} 
+
+				function goToAPILadning() {
+					//window.location.href = "https://www.snapchat.com/add/ncjohnson818";
+					window.location.href = "https://code-developer-edition.na73.force.com/cirrus";
 				} 
 			</script>
 			<script src="assets/js/jquery.min.js"></script>
