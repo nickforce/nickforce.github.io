@@ -70,6 +70,7 @@
 				</section>
 
 				<div class="copyright">&copy; Cirrus Code, LLC. All rights reserved.</div>
+				<div id="root"></div>
 		</div>
 		<!-- Scripts -->
 		<script>
@@ -84,6 +85,73 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
+			<script>
+
+					function runListRetrieve(elementId, endPoint) {
+						const app = document.getElementById(elementId);
+
+						const logo = document.createElement('img');
+						logo.src = 'logo.png';
+
+						const container = document.createElement('div');
+						container.setAttribute('class', 'container');
+
+						app.appendChild(logo);
+						app.appendChild(container);
+
+						var request = new XMLHttpRequest();
+						request.open('GET', endPoint, true);
+						request.onload = function () {
+
+						// Begin accessing JSON data here
+						var data = JSON.parse(this.response);
+						console.log(JSON.stringify(data));
+						if (request.status >= 200 && request.status < 400) {
+							data.forEach(movie => {
+							const card = document.createElement('div');
+							card.setAttribute('class', 'card');
+
+							const h1 = document.createElement('h1');
+							h1.textContent = movie.title + movie.Name;
+
+							const p = document.createElement('p');
+							movie.description = movie.description.substring(0, 300);
+							p.textContent = `${movie.description}...`;
+
+							container.appendChild(card);
+							card.appendChild(h1);
+							card.appendChild(p);
+							});
+						} else {
+							const errorMessage = document.createElement('marquee');
+							errorMessage.textContent = `Gah, it's not working!`;
+							app.appendChild(errorMessage);
+						}
+						}
+
+						request.send();
+					}
+
+			</script>
+
+
+
+			<script>
+
+
+
+
+
+					(function() {
+						runListRetrieve('root', 'https://code-developer-edition.na73.force.com/cirrus/services/apexrest/service/Drake');
+						//<!-- runListRetrieve('root2', 'https://ghibliapi.herokuapp.com/films'); -->
+					})();
+
+
+
+				</script>
 	</body>
 	
 	
