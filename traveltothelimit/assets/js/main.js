@@ -236,7 +236,7 @@
 
 			});
 
-		// Poptrox.
+		// Poptrox. 
 			$main.poptrox({
 				baseZIndex: 20000,
 				caption: function($a) {

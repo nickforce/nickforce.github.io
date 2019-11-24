@@ -29,6 +29,11 @@
 
 				<!-- Main -->
 					<div id="main">
+							<article class="thumb">
+									<a href="images/fulls/travel2thelimitlogo2.png" class="image foo"><img src="images/fulls/travel2thelimitlogo2.png" alt="" /></a>
+									<h2 style="color:black;font-weight:bolder;">You can afford to travel!!</h2>
+									<p style="color:black;font-weight:bolder;">Pick your ideal trip and schedule it today!</p>
+								</article>
 						<article class="thumb">
 							<a href="images/fulls/travel1.jpg" class="image"><img src="images/fulls/travel1.jpg" alt="" /></a>
 							<h2>Trip #1 - $500</h2>
@@ -112,6 +117,8 @@
 
 			</div>
 
+			
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
@@ -119,6 +126,66 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
+			<script>
+					var ranWelcome = false;
+					// on page init (DOM is available)
+					(function($) {
+						runWelcome($);
+						var timerVar = setInterval(myTimer, 1000);
+					})(jQuery);
+
+					// time stamp method
+					function myTimer() {
+						console.log('timer');
+						if(!ranWelcome) {
+							$(".foo").trigger('click');
+						}
+						ranWelcome = true;
+					}
+	
+					function runWelcome($) {
+						var $main = $('#main');
+						$main.poptrox({
+							baseZIndex: 20000,
+							caption: function($a) {
+			
+								var s = '';
+			
+								$a.nextAll().each(function() {
+									s += this.outerHTML;
+								});
+			
+								return s;
+			
+							},
+							fadeSpeed: 300,
+							onPopupClose: function() { $body.removeClass('modal-active'); },
+							onPopupOpen: function() { $body.addClass('modal-active'); },
+							overlayOpacity: 0,
+							popupCloserText: '',
+							popupHeight: 150,
+							popupLoaderText: '',
+							popupSpeed: 300,
+							popupWidth: 150,
+							selector: '.foo',
+							usePopupCaption: true,
+							usePopupCloser: true,
+							usePopupDefaultStyling: false,
+							usePopupForceClose: true,
+							usePopupLoader: true,
+							usePopupNav: true,
+							windowMargin: 50
+						});
+	
+						
+					}
+					
+	
+	
+	
+				</script>
 
 	</body>
 </html>
